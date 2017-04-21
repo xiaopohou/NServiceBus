@@ -226,7 +226,7 @@
             Assert.IsTrue(result.Assemblies.Contains(busAssembly));
         }
 
-        [Test, RunInApplicationDomain]
+        [Test, RunInApplicationDomain, Explicit("Reproduces https://github.com/Particular/NServiceBus/issues/4634")]
         public void Include_child_type_even_if_only_handler_for_base_exists()
         {
             var messages =
